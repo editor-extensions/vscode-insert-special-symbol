@@ -34,6 +34,7 @@ There are no settings for this extension (__yet__). Keep an eye out for updates.
 ## Known Issues
 
 No known issues at the moment, beyond the limitations that have been outlined above.
+If you do find a suspected bug, please report it [here](https://github.com/editor-extensions/vscode-insert-special-symbol/issues/new).
 
 ## Release Notes
 
