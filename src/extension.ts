@@ -16,7 +16,7 @@ const lookup = {
     epsilon: 'ε',
     zeta:    'ζ',
     eta:     'η',
-    Theta:   'θ',
+    theta:   'θ',
     iota:    'ι',
     kappa:   'κ',
     lambda:  'λ',
@@ -48,9 +48,11 @@ export function activate(context: vscode.ExtensionContext) {
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
     const commandName = 'insert-special-symbol.replaceSelection';
- 
     
     function isUnicodeEscape(s: string) {
+        // A Unicode escape sequence consists
+        // of the characters '\u' followed by
+        // exactly four hexadecimal digits
         return /\\u[0-9a-fA-F]{4}/.test(s);
     }
 
