@@ -7,8 +7,11 @@ import * as vscode from 'vscode';
  *        - Unicode data
  *        - Extensible, options
  *        - Key map
+ *        - Latex mode
+ *        - Categories
  */
 const lookup = {
+    // Greek
     alpha:   'α',
     beta:    'β',
     gamma:   'γ',
@@ -32,7 +35,52 @@ const lookup = {
     phi:     'φ',
     chi:     'χ',
     psi:     'ψ',
-    omega:   'ω'
+    omega:   'ω',
+
+    // Math
+    '+-':       '±',
+    '*':        '×',
+    '/':        '÷',
+    'sqrt':     '√',
+    'integral': '∫',
+    'inf':      '∞',
+    '/=':       '≠',
+    'approx':   '≈',
+    'equiv':    '≡',
+    'prop':     '∝',
+    'ge':       '≥',
+    'le':       '≤',
+
+    // Set theory
+    'elem':  '∈',
+    'nelem': '∉',
+    'nat':   'ℕ',
+    'int':   'ℤ',
+    'ratio': 'ℚ',
+    'real':  'ℝ',
+    'aleph': 'ℵ',
+
+    // ⊆ ⊇
+
+    // Logic
+    'not':    '¬',
+    '∝':      'prop',
+    'forall': '∀',
+
+    // Arrows
+    '<=>': '⇔',
+    '=>':  '⇒',
+
+    // Geometry
+
+    // Arabic, Hebrew
+
+    // Cultural
+    'man':   '♂',
+    'woman': '♀'
+
+    // Music
+
 };
 
 
@@ -84,15 +132,18 @@ export function activate(context: vscode.ExtensionContext) {
             return false
         }
     }
+
+    function tryReplaceEverySelection(editor, edit) {
+        editor.selections.forEach(sel => {
+            const selected  = editor.document.getText(sel);
+            tryReplaceNameWithCharacter(selected, sel, edit) || tryReplaceCodeWithCharacter(selected, sel, edit);
+        });
+    }
     
     let disposable = vscode.commands.registerTextEditorCommand(commandName, (editor, edit, args) => {
         // The code you place here will be executed every time your command is executed
         // const editor = vscode.window.activeTextEditor;
-        editor.selections.forEach(sel => {
-            //console.log(sel, editor, edit, args);
-            const selected  = editor.document.getText(sel);
-            tryReplaceNameWithCharacter(selected, sel, edit) || tryReplaceCodeWithCharacter(selected, sel, edit);
-        });
+        tryReplaceEverySelection(editor, edit);
     });
 
     context.subscriptions.push(disposable);

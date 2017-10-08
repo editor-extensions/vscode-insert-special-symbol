@@ -2,7 +2,7 @@
     "name": "insert-special-symbol",
     "displayName": "insert-special-symbol",
     "description": "Inserting Unicode symbols has never been easier",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "swiftstudios",
     "engines": {
         "vscode": "^1.15.0"
@@ -15,10 +15,12 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "insert-special-symbol.replaceSelection",
-            "title": "Insert Special Symbol"
-        }]
+        "commands": [
+            {
+                "command": "insert-special-symbol.replaceSelection",
+                "title": "Insert Special Symbol"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
