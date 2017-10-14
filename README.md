@@ -11,13 +11,14 @@ Contributions and suggestions are very welcome.
 This command replaces the current selection(s) with the corresponding value in a lookup table.
 For instance, `pi` becomes `π` and `rho` becomes `ρ`.
 
-As of version *1.1*, there are some replacements available for the following categories:
+As of version *1.3.0*, there are some replacements available for the following categories:
 - Greek
 - Mathematics
 - Set theory
 - Formal logic
 - Arrows
 - Culture
+- Subscripts and superscripts (just numeric, for now)
 
 You may also replace a hexadecimal Unicode escape sequence such as `\u03b1`.
 
@@ -57,4 +58,10 @@ The very first version of `Insert Special Symbol`.
 
 Initial release
 
-###
+### 1.2.0
+
+More symbols added
+
+### 1.3.0
+
+Digit subscripts and superscripts

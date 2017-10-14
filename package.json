@@ -2,7 +2,7 @@
     "name": "insert-special-symbol",
     "displayName": "insert-special-symbol",
     "description": "Inserting Unicode symbols has never been easier",
-    "version": "0.0.2",
+    "version": "1.2.0",
     "publisher": "swiftstudios",
     "engines": {
         "vscode": "^1.15.0"
