@@ -11,7 +11,8 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:insert-special-symbol.replaceSelection"
+		"onCommand:insert-special-symbol.replaceSelection",
+		"onCommand:insert-special-symbol.selectSymbol"
     ],
     "main": "./out/src/extension",
     "contributes": {
@@ -19,7 +20,11 @@
             {
                 "command": "insert-special-symbol.replaceSelection",
                 "title": "Insert Special Symbol"
-            }
+			}, 
+			{
+				"command": "insert-special-symbol.selectSymbol",
+				"title": "Insert Special Symbol: Select..."
+			}
         ]
     },
     "scripts": {
